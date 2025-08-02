@@ -298,53 +298,43 @@ a {
 
 @media (max-width: 768px) {
     .navbar {
-        height: auto;
-        min-height: 60px;
-        padding: 15px 10px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        height: 60px;
+        padding: 0 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     
     .navbar .logo {
-        font-size: 24px;
-        align-self: center;
+        font-size: 22px;
     }
     
     .navbar ul {
-        flex-direction: column;
-        width: 100%;
+        display: flex;
+        flex-direction: row;
         align-items: center;
-        gap: 10px;
+        gap: 0;
     }
     
     .navbar ul li {
-        margin: 0;
-        width: 100%;
-        text-align: center;
+        margin-left: 18px;
     }
     
     .navbar ul li a {
-        font-size: 18px;
-        display: block;
-        padding: 8px 15px;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-    }
-    
-    .navbar ul li a:hover {
-        background: rgba(124, 240, 61, 0.1);
+        font-size: 16px;
+        padding: 5px 8px;
+        white-space: nowrap;
     }
     
     .home {
-        flex-direction: column-reverse; /* This moves the image above the text */
-        padding: 140px 5% 40px; /* Increased top padding to account for taller navbar */
+        flex-direction: column;
+        padding: 100px 5% 40px;
         gap: 25px;
         height: auto;
     }
     
     .home-img {
-        order: -1; /* Ensures image appears first */
+        order: -1; /* This puts the image first/above */
         justify-content: center;
         margin: 0;
     }
@@ -352,72 +342,92 @@ a {
     .home-info {
         width: 100%;
         text-align: center;
-        order: 1; /* Ensures text appears second */
+        order: 1; /* This puts the text content second/below */
     }
     
     .home-info h1 {
-        font-size: 36px;
+        font-size: 32px;
         margin-bottom: 10px;
     }
     
     .home-info h2 {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .home-img .img-box {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
     }
 }
 
 @media (max-width: 480px) {
     .navbar {
-        padding: 12px 5px;
-        gap: 12px;
+        height: 60px;
+        padding: 0 5px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     
     .navbar .logo {
-        font-size: 20px;
+        font-size: 18px;
+    }
+    
+    .navbar ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+    }
+    
+    .navbar ul li {
+        margin-left: 8px;
     }
     
     .navbar ul li a {
-        font-size: 16px;
-        padding: 6px 12px;
+        font-size: 12px;
+        padding: 4px 6px;
+        white-space: nowrap;
     }
     
     .home {
-        padding: 120px 3% 30px;
+        flex-direction: column;
+        padding: 80px 2% 30px;
         gap: 20px;
     }
     
+    .home-img {
+        order: -1; /* Image appears first/above */
+        justify-content: center;
+    }
+    
+    .home-info {
+        order: 1; /* Text content appears second/below */
+        width: 100%;
+        text-align: center;
+    }
+    
     .home-info h1 {
-        font-size: 28px;
-        line-height: 1.2;
+        font-size: 24px;
     }
     
     .home-info h2 {
-        font-size: 16px;
-    }
-    
-    .home-info p {
         font-size: 14px;
-        margin: 8px 0 20px;
     }
     
     .home-img .img-box {
-        width: 180px;
-        height: 180px;
+        width: 130px;
+        height: 130px;
     }
     
     .btn {
-        padding: 8px 20px;
+        padding: 8px 18px;
         font-size: 14px;
     }
     
     .soci a {
         font-size: 16px;
         padding: 6px;
-        margin: 0 6px 0 0;
     }
     
     .home-info .btn-sci {
