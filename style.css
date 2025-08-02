@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif; 
-
 }
 
 a {
@@ -30,12 +28,12 @@ a {
     animation: show-content 1.5s linear forwards;
     animation-delay: 1.2s;
 }
+
 @keyframes show-content{
     100%{
         visibility: visible;
         opacity: 1;
     }
-
 }
 
 .navbar .logo {
@@ -51,13 +49,12 @@ a {
     list-style: none;
     margin-left: 35px;
 }
+
 .navbar ul li a {
     font-size: 20px;
     font-weight: 500;
     transition: .5s;
-
 }
-
 
 .navbar ul li a:hover {
     color: #7cf03d;
@@ -69,13 +66,12 @@ a {
     height: 100vh;
     padding: 80px 9% 60px;
     color: #fff;
-    gap: 40px; /* Add space between info and image */
-     visibility: hidden;
+    gap: 40px;
+    visibility: hidden;
     opacity: 0;
     animation: show-content 1.5s linear forwards;
     animation-delay: 1.6s;
 }
-
 
 .home-info {
     flex: 1 1 55%;
@@ -85,12 +81,13 @@ a {
 .home-info h1 {
     font-size: 50px;
 }
+
 .home-info h2 {
     display: inline-block;
     font-size: 25px;
     margin: -10px 0;
-    
 }
+
 .home-info h2 span{
     position: relative;
     display: inline-block;
@@ -98,7 +95,6 @@ a {
     -webkit-text-stroke: .7px #7cf03d;
     animation: display-text 16s linear infinite;
     animation-delay: calc(-4s * var(--i));
-
 }
 
 @keyframes display-text{
@@ -106,6 +102,7 @@ a {
         display: none;
     }
 }
+
 .home-info h2 span::before {
     content: attr(data-text);
     position: absolute;
@@ -125,6 +122,7 @@ a {
         width: 100%;
     }
 }
+
 .home-info p {
     font-size: 16px;
     margin: 10px 0 25px;
@@ -165,6 +163,7 @@ a {
     color: #1f242d;
     box-shadow: 0 0 10px #7cf03d;
 }
+
 /* Keep your .btn styles for the Download CV button */
 .btn {
     display: inline-block;
@@ -178,11 +177,13 @@ a {
     font-weight: 500;
     transition: .5s;
 }
+
 .btn:hover {
     background: transparent;
     color: #7cf03d;
     box-shadow: none;
 }
+
 .home-img {
     flex: 0 1 35%;
     min-width: 220px;
@@ -195,7 +196,7 @@ a {
     position: relative;
     width: 320px;
     height: 320px;
-    aspect-ratio: 1/1; /* Ensures perfect circle on resize */
+    aspect-ratio: 1/1;
     border-radius: 50%;
     padding: 1px;
     display: flex;
@@ -216,7 +217,6 @@ a {
     z-index: 0;
     transform: rotate(0deg);
     animation : rotate-border 10s linear infinite;
-
 }
 
 .home-img .img-box::after {
@@ -253,6 +253,7 @@ a {
     mix-blend-mode: lighten;
     z-index: 2;
 }
+
 .bars-animation {
     position: absolute;
     width: 100%;
@@ -260,6 +261,7 @@ a {
     display:flex;
     z-index: -1;
 }
+
 .bars-animation .bar {
     width: 100%;
     height: 100%;
@@ -268,6 +270,7 @@ a {
    animation:show-bars .5s ease-in-out forwards;
    animation-delay: calc(.1s * var(--i));
 }
+
 @keyframes show-bars{
     100% {
         transform: translateY(0%);
@@ -295,64 +298,135 @@ a {
 
 @media (max-width: 768px) {
     .navbar {
-        height: 60px;
-        padding: 0 10px;
+        height: auto;
+        min-height: 60px;
+        padding: 15px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
+    
     .navbar .logo {
-        font-size: 22px;
+        font-size: 24px;
+        align-self: center;
     }
+    
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+    }
+    
     .navbar ul li {
-        margin-left: 18px;
+        margin: 0;
+        width: 100%;
+        text-align: center;
     }
+    
     .navbar ul li a {
-        font-size: 16px;
-    }
-    .home-info h1 {
-        font-size: 32px;
-    }
-    .home-info h2 {
         font-size: 18px;
+        display: block;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
     }
+    
+    .navbar ul li a:hover {
+        background: rgba(124, 240, 61, 0.1);
+    }
+    
+    .home {
+        flex-direction: column-reverse; /* This moves the image above the text */
+        padding: 140px 5% 40px; /* Increased top padding to account for taller navbar */
+        gap: 25px;
+        height: auto;
+    }
+    
+    .home-img {
+        order: -1; /* Ensures image appears first */
+        justify-content: center;
+        margin: 0;
+    }
+    
+    .home-info {
+        width: 100%;
+        text-align: center;
+        order: 1; /* Ensures text appears second */
+    }
+    
+    .home-info h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    
+    .home-info h2 {
+        font-size: 20px;
+    }
+    
     .home-img .img-box {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
 }
 
 @media (max-width: 480px) {
     .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 5px;
+        padding: 12px 5px;
+        gap: 12px;
     }
-    .navbar ul {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
+    
+    .navbar .logo {
+        font-size: 20px;
     }
-    .navbar ul li {
-        margin: 8px 0 0 0;
+    
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 6px 12px;
     }
+    
     .home {
-        padding: 80px 2% 30px;
+        padding: 120px 3% 30px;
         gap: 20px;
     }
+    
     .home-info h1 {
-        font-size: 24px;
+        font-size: 28px;
+        line-height: 1.2;
     }
+    
     .home-info h2 {
-        font-size: 14px;
+        font-size: 16px;
     }
+    
+    .home-info p {
+        font-size: 14px;
+        margin: 8px 0 20px;
+    }
+    
     .home-img .img-box {
-        width: 130px;
-        height: 130px;
+        width: 180px;
+        height: 180px;
     }
+    
     .btn {
-        padding: 8px 18px;
+        padding: 8px 20px;
         font-size: 14px;
     }
+    
     .soci a {
         font-size: 16px;
         padding: 6px;
+        margin: 0 6px 0 0;
+    }
+    
+    .home-info .btn-sci {
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .soci {
+        justify-content: center;
+        gap: 8px;
     }
 }
