@@ -330,7 +330,7 @@ a {
 }
 
 .hamburger-icon {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
     width: 32px;
@@ -359,16 +359,16 @@ a {
         display: flex;
     }
     .nav-links {
+        display: none;
         position: absolute;
         top: 60px;
         right: 0;
         background: #1f242d;
-        width: 180px;
+        width: 200px;
         flex-direction: column;
         align-items: flex-start;
         box-shadow: 0 8px 24px #0002;
         padding: 20px 0;
-        display: none;
         z-index: 100;
     }
     .nav-links li {
